@@ -1,0 +1,19 @@
+{
+	"name": "compare_files",
+	"version": "1.0.0",
+	"description": "Сравнение второго файла по первому построчно по ID и вывод в файл недостающих строк по условию",
+	"main": "PROD.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node PROD.js"
+	},
+	"author": "Valery Blagodarov",
+	"license": "ISC",
+	"dependencies": {
+		"iconv-lite": "^0.6.3",
+		"lodash": "^4.17.21"
+	},
+	"devDependencies": {
+		"@types/node": "^20.5.9"
+	}
+}
