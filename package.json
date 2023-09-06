@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"description": "Сравнение второго файла по первому построчно по ID и вывод в файл недостающих строк по условию",
 	"main": "PROD.js",
+	"bin": {
+		"nceuiic": "PROD.js"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node PROD.js"

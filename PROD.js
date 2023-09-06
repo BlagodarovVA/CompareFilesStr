@@ -6,23 +6,22 @@ const _ = require('lodash');
 
 // Регулярка поиска номера услуги в строке (2 поле)
 const regexp = /\d+###(?<number>\S+)###\d\d\.\d\d.\d+###\d\d\./;
+
 // Результирующий файл
-const resultFile = './tmp/Разница.csv';
+const resultFile = '_Разница.csv';
+
 // Промежуточные файлы, перекодированнные в UTF-8
-const tmpNCEU = './tmp/NCEU.csv';
-const tmpIIC = './tmp/IIC.csv';
+const tmpNCEU = 'NCEU.csv';
+const tmpIIC = 'IIC.csv';
+
+let nceuFile = process.argv[2];
+let iicFile = process.argv[3];
 
 // делаем UTF-8 файлы
-let text1 = iconv.decode(
-	fs.readFileSync('./tmp/exp_20230801_20230831_NCEU.csv'),
-	'win1251'
-);
+let text1 = iconv.decode(fs.readFileSync(nceuFile), 'win1251');
 fs.writeFileSync(tmpNCEU, text1);
 
-let text2 = iconv.decode(
-	fs.readFileSync('./tmp/exp_20230801_20230831_IIC.csv'),
-	'win1251'
-);
+let text2 = iconv.decode(fs.readFileSync(iicFile), 'win1251');
 fs.writeFileSync(tmpIIC, text2);
 
 const file1 = path.resolve(tmpNCEU);
