@@ -7,8 +7,8 @@ node_modules
 /prisma/dev.db-journal
 /.pnp
 .pnp.js
-.docx
-.csv
+*.docx
+*.csv
 
 # Logs
 logs
