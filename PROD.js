@@ -17,7 +17,7 @@ const tmpIIC = 'IIC.csv';
 let nceuFile = process.argv[2];
 let iicFile = process.argv[3];
 
-// делаем UTF-8 файлы
+// делаем промежуточные UTF-8 файлы csv
 let text1 = iconv.decode(fs.readFileSync(nceuFile), 'win1251');
 fs.writeFileSync(tmpNCEU, text1);
 
@@ -28,7 +28,7 @@ const file1 = path.resolve(tmpNCEU);
 const file2 = path.resolve(tmpIIC);
 
 const writeStream = fs.createWriteStream(path.join(resultFile));
-// Если хотим ID в файл:
+// Если хотим ID записать в файл:
 // const writeStreamID = fs.createWriteStream(path.join('./tmp', 'ID.csv'));
 
 //-----------------------------------------------------------
@@ -63,7 +63,9 @@ loadingIDProm.then((arr) => {
 	const s1 = new Set();
 	const s2 = new Set();
 
+	// Если нужно искать уникальные строки среди обоих файлов
 	// const p = [read(file1, s1, s2), read(file2, s2, s1)];
+	// проверяем второй файл по первому
 	const p = [read(file2, s2, s1)];
 
 	Promise.all(p)
