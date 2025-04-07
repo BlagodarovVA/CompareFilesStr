@@ -1,0 +1,1 @@
+This is a console utility on node.js for comparing the second text file to the first one line by line by ID and outputting missing lines to a file by condition. It is used to compare the results of services and their exchange.
