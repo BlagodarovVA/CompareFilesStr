@@ -114,7 +114,7 @@ loadingIDProm.then((arr) => {
 			});
 			// построчная обработка
 			rLine.on('line', (str) => {
-				if (cnt == 0) console.log('Сравнение файлов...');
+				if (cnt === 0) console.log('Сравнение файлов...');
 				++cnt;
 
 				if (str.match(regexp)) {
